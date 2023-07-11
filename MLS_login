@@ -1,0 +1,18 @@
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Firefox()
+driver.implicitly_wait(0.5)
+# This is the only link I could use to get to the website.
+driver.get("https://tulsa.mlsmatrix.com/Matrix/")
+
+username = driver.find_element("name", "username")
+username.send_keys("username")
+
+password = driver.find_element("name", "password")
+password.send_keys("password")
+
+login = driver.find_element("id", "loginbtn")
+login.click()
+driver.implicitly_wait(5)
